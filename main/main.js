@@ -2,19 +2,20 @@
 import { sleep } from 'k6';
 import { error_check } from '../check/check.js';
 import { scenario } from 'k6/execution';
-
-import { ran } from '../api/script.js';
-import { callback_scb } from '../api/getJson.js';
+import { DownloadFile, GetProfile, PostProfile, PostProfile_2, PostProfile_3 } from '../api/example.js';
 
 
 
 //============================================================================
 
 export default function () {    //เรียกใช้ API ใน export default function
-  response = ran()
-  //response = callback_scb(scenario)
+  //response = GetProfile()
+  //response = PostProfile()
+  //response = PostProfile_2()
+  //response = PostProfile_3(scenario)
+  //response = DownloadFile()
 
-  
+
   error_check(response);
   sleep(1)
 }

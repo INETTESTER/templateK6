@@ -2,7 +2,7 @@
 import { sleep } from 'k6';
 import { error_check } from '../check/check.js';
 import { scenario } from 'k6/execution';
-import { DownloadFile, GetProfile, PostProfile, PostProfile_2, PostProfile_3 } from '../api/example.js';
+import { DownloadFile, GetProfile, PostProfile, PostProfile_2, PostProfile_3, UploadFile, UploadFile_2 } from '../api/example.js';
 
 
 
@@ -14,6 +14,8 @@ export default function () {    //เรียกใช้ API ใน export def
   //response = PostProfile_2()
   //response = PostProfile_3(scenario)
   //response = DownloadFile()
+  //response = UploadFile()
+  //response = UploadFile_2()
 
 
   error_check(response);

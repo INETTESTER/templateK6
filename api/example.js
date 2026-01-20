@@ -105,6 +105,23 @@ export function UploadFile() {  ///POST API UploadFile
 }
 
 
+const fileData = http.file(open('../file/ncds_person_template (9).xlsx'), 'ncds_person_template (9).xlsx');
+export function UploadFile_2() {  ///POST API UploadFile
+    const url = 'https://ncds-prevention.buddy-care.org/service/api/v1/patients/excel';
+    const payload = {
+        file: fileData,
+    };
+    const params = {
+        headers: {
+            'Cookie': '' + token
+        },
+    };
+    const response = http.post(url, payload, params);
+    console.log(response.body); // log response body
+    return response; // return the response object
+}
+
+
 
 
 

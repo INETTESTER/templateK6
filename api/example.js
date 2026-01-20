@@ -87,42 +87,25 @@ export function PostProfile_3(scenario) {  ///POST กรณี id ไม่ซ�
 }
 
 
+import { FormData } from 'https://jslib.k6.io/formdata/0.0.2/index.js';
+const imgPath = open('../file/งานนำเสนอไม่มีชื่อ.pdf', 'b');  //ไฟล์ที่จะ upload
+export function UploadFile() {  ///POST API UploadFile
+    const url = 'https://uat-agi.manageai.co.th/api/v1/file';
+
+    const formData = new FormData();
+    formData.append('file', http.file(imgPath, 'pdf.pdf', 'application/pdf'));
+
+    const headers = {
+        'Content-Type': `multipart/form-data; boundary=${formData.boundary}`,
+    };
+
+    const response = http.post(url, formData.body(), { headers });
+    console.log('Response body:', response.body);
+    return response;
+}
 
 
 
 
 
 
-
-
-
-
-
-
-
-// import { SharedArray } from 'k6/data';
-
-// const data = new SharedArray('payment_transaction_no', function () {
-//     return JSON.parse(open('../file/1.json')).payment_transaction_no;
-// });
-
-// export function callback_scb(scenario) {
-//     const payment_transaction_no = data[scenario.iterationInTest];
-//     const url = 'https://example.com/post';
-
-
-//     const payload = JSON.stringify({
-//         payment_transaction_no: payment_transaction_no,
-//     });
-
-//     const params = {
-//         headers: {
-//             'Content-Type': 'application/json',
-//         }
-//     };
-
-//     const response = http.post(url, payload, params);
-
-//     //console.log(response.body);
-//     return response
-// }

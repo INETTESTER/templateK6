@@ -105,7 +105,7 @@ export function UploadFile() {  ///POST API UploadFile
 }
 
 
-const fileData = http.file(open('../file/ncds_person_template (9).xlsx'), 'ncds_person_template (9).xlsx');
+const fileData = http.file(open('../file/งานนำเสนอไม่มีชื่อ.pdf'), 'งานนำเสนอไม่มีชื่อ.pdf');
 export function UploadFile_2() {  ///POST API UploadFile
     const url = 'https://ncds-prevention.buddy-care.org/service/api/v1/patients/excel';
     const payload = {

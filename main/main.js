@@ -9,7 +9,7 @@ import { DownloadFile, GetProfile, PostProfile, PostProfile_2, PostProfile_3, Up
 //============================================================================
 
 export default function () {    //เรียกใช้ API ใน export default function
-  //response = GetProfile()
+  response = GetProfile()
   //response = PostProfile()
   //response = PostProfile_2()
   //response = PostProfile_3(scenario)
@@ -111,7 +111,7 @@ if (scenariox == 1) {
       timeout: '300s'
     },
     insecureSkipTLSVerify: true,
-    discardResponseBodies: true,
+    discardResponseBodies: false,
     scenarios: {
       contacts: {
         executor: 'per-vu-iterations',

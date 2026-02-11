@@ -9,6 +9,7 @@ export function error_check(response) {
     '401 Unauthorized': (r) => r.status === 401,
     '403 Forbidden': (r) => r.status === 403,
     '404 Not Found': (r) => r.status === 404,
+    '422 Unprocessable Content': (r) => r.status === 422,
     '429 Too Many Requests': (r) => r.status === 429,
     '500 Internal Server Error': (r) => r.status === 500,
     '502 Bad Gateway': (r) => r.status === 502,

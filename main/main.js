@@ -1,8 +1,8 @@
 //=============================== import API =================================
-import { sleep, scenario, error_check, options } from '../config/common.js';
+import { sleep, scenario, error_check, options } from '../gafana/common.js';
+export { options };
+let response;
 import { DownloadFile, GetProfile, PostProfile, PostProfile_2, PostProfile_3, UploadFile } from '../api/example.js';
-
-
 
 //============================================================================
 
@@ -19,4 +19,3 @@ export default function () {    //เรียกใช้ API ใน export def
   error_check(response);
   sleep(1)
 }
-export { options };

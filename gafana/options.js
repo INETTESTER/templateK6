@@ -2,6 +2,7 @@ const user = Number(__ENV.user || 1);
 const durationx = Number(__ENV.durationx || 1);
 const scenariox = Number(__ENV.scenariox || 1);
 
+
 const vusx = Math.ceil(user / durationx);
 
 let options;

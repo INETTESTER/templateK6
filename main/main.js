@@ -1,12 +1,12 @@
 //=============================== import API =================================
-import { sleep, scenario, error_check, options } from '../gafana/common.js';
+import { sleep, scenario, error_check, options } from '../config/common.js';
 export { options }; const cid = __ENV.cid || '1'; let response;
 import { DownloadFile, GetProfile, PostProfile, PostProfile_2, PostProfile_3, UploadFile } from '../api/example.js';
 
 //============================================================================
 
 export default function () {    //เรียกใช้ API ใน export default function
-  //response = GetProfile(cid)
+  response = GetProfile()
   //response = PostProfile()
   //response = PostProfile_2()
   //response = PostProfile_3(scenario)
